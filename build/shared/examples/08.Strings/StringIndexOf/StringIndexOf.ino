@@ -1,22 +1,22 @@
 /*
   String indexOf() and lastIndexOf() functions
- 
+
  Examples of how to evaluate, look for, and replace characters in a String
- 
+
  created 27 July 2010
  modified 2 Apr 2012
  by Tom Igoe
- 
- http://arduino.cc/en/Tutorial/StringIndexOf
- 
- This example code is in the public domain. 
+
+ http://www.arduino.cc/en/Tutorial/StringIndexOf
+
+ This example code is in the public domain.
  */
 
 void setup() {
   // Open serial communications and wait for port to open:
   Serial.begin(9600);
   while (!Serial) {
-    ; // wait for serial port to connect. Needed for Leonardo only
+    ; // wait for serial port to connect. Needed for native USB port only
   }
 
   // send an intro:
@@ -33,7 +33,7 @@ void loop() {
 
   stringOne = "<HTML><HEAD><BODY>";
   int secondOpeningBracket = firstClosingBracket + 1;
-  int secondClosingBracket = stringOne.indexOf('>', secondOpeningBracket );
+  int secondClosingBracket = stringOne.indexOf('>', secondOpeningBracket);
   Serial.println("The index of  the second > in the string " + stringOne + " is " + secondClosingBracket);
 
   // you can also use indexOf() to search for Strings:
@@ -43,7 +43,7 @@ void loop() {
 
   stringOne = "<UL><LI>item<LI>item<LI>item</UL>";
   int firstListItem = stringOne.indexOf("<LI>");
-  int secondListItem = stringOne.indexOf("item", firstListItem + 1 );
+  int secondListItem = stringOne.indexOf("item", firstListItem + 1);
   Serial.println("The index of the second list item in the string " + stringOne + " is " + secondClosingBracket);
 
   // lastIndexOf() gives you the last occurrence of a character or string:
@@ -61,6 +61,6 @@ void loop() {
   Serial.println("The index of the second last paragraph tag " + stringOne + " is " + secondLastGraf);
 
   // do nothing while true:
-  while(true);
+  while (true);
 }
 
